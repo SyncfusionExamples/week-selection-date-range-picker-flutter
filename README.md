@@ -1,6 +1,5 @@
 # How to select a week in the Flutter data range picker (SfDateRangePicker)
 
-
 In the flutter date range picker, you can select the entire week when selecting a single day using the `onSelectionChanged` callback and `enableSwipeSelection` property.
 
 ## Step 1:
