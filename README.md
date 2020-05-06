@@ -65,3 +65,8 @@ void selectionChanged(DateRangePickerSelectionChangedArgs args) {
   }
 }
 ```
+**[View document in Syncfusion Flutter Knowledge base](https://www.syncfusion.com/kb/11412/how-to-select-a-week-in-the-flutter-data-range-picker-sfdaterangepicker)**
+
+**Screenshots**
+
+![week selection](http://www.syncfusion.com/uploads/user/kb/flut/flut-861/flut-861_img1.png)
