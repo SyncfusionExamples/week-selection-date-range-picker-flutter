@@ -69,4 +69,4 @@ void selectionChanged(DateRangePickerSelectionChangedArgs args) {
 
 **Screenshots**
 
-![week selection](http://www.syncfusion.com/uploads/user/kb/flut/flut-861/flut-861_img1.png)
+<img alt="week selection"  src="http://www.syncfusion.com/uploads/user/kb/flut/flut-861/flut-861_img1.png" width="250" height="250" />|
