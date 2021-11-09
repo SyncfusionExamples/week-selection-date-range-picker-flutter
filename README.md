@@ -3,16 +3,10 @@
 In the flutter date range picker, you can select the entire week when selecting a single day using the `onSelectionChanged` callback and `enableSwipeSelection` property.
 
 ## Step 1:
-In initState(), initialize the controller for date range picker.
+Inside the state, initialize the controller for date range picker.
 
 ```xml
-DateRangePickerController _controller;
-@override
-void initState() {
-  // TODO: implement initState
-  _controller = DateRangePickerController();
-  super.initState();
-}
+final DateRangePickerController _controller = DateRangePickerController();
 ```
 ## Step 2:
 Place the date range picker inside the body of the Scaffold widget, set the `selectionMode` as range selection and trigger the `onSelectionChanged` callback of the flutter date picker.
@@ -45,8 +39,8 @@ void selectionChanged(DateRangePickerSelectionChangedArgs args) {
   int endDayOfWeek = (firstDayOfWeek - 1) % 7;
   endDayOfWeek = endDayOfWeek < 0? 7 + endDayOfWeek : endDayOfWeek;
   PickerDateRange ranges = args.value;
-  DateTime date1 = ranges.startDate;
-  DateTime date2 = ranges.endDate?? ranges.startDate;
+  DateTime date1 = ranges.startDate!;
+  DateTime date2 = (ranges.endDate?? ranges.startDate)!;
   if(date1.isAfter(date2))
     {
       var date=date1;
