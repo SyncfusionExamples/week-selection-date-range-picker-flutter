@@ -20,7 +20,7 @@ class WeekSelectionInPicker extends StatefulWidget {
 }
 
 class _WeekSelectionInPickerState extends State<WeekSelectionInPicker> {
-  DateRangePickerController _controller;
+  late DateRangePickerController _controller;
 
   @override
   void initState() {
@@ -41,7 +41,7 @@ class _WeekSelectionInPickerState extends State<WeekSelectionInPicker> {
               view: DateRangePickerView.month,
               selectionMode: DateRangePickerSelectionMode.range,
               onSelectionChanged: selectionChanged,
-              monthViewSettings: DateRangePickerMonthViewSettings(enableSwipeSelection: false),
+              monthViewSettings: const DateRangePickerMonthViewSettings(enableSwipeSelection: false),
             ),
           )
         ],
@@ -57,21 +57,21 @@ class _WeekSelectionInPickerState extends State<WeekSelectionInPicker> {
     int endDayOfWeek = (firstDayOfWeek - 1) % 7;
     endDayOfWeek = endDayOfWeek <  0? 7 + endDayOfWeek : endDayOfWeek;
     PickerDateRange ranges = args.value;
-    DateTime date1 = ranges.startDate;
-    DateTime date2 = ranges.endDate?? ranges.startDate;
+    DateTime date1 = ranges.startDate!;
+    DateTime date2 = ranges.endDate?? ranges.startDate!;
     if(date1.isAfter(date2))
-      {
-        var date=date1;
-        date1=date2;
-        date2=date;
-      }
+    {
+      var date=date1;
+      date1=date2;
+      date2=date;
+    }
     int day1 = date1.weekday % 7;
     int day2 = date2.weekday % 7;
 
     DateTime dat1 = date1.add(Duration(days: (firstDayOfWeek - day1)));
     DateTime dat2 = date2.add(Duration(days: (endDayOfWeek - day2)));
 
-    if( !isSameDate(dat1, ranges.startDate)|| !isSameDate(dat2,ranges.endDate))
+    if( !isSameDate(dat1, ranges.startDate!)|| !isSameDate(dat2,ranges.endDate!))
     {
       _controller.selectedRange = PickerDateRange(dat1, dat2);
     }
